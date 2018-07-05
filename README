@@ -1,0 +1,56 @@
+=======================================
+ Scandit Barcode Scanner SDK for Linux
+=======================================
+
+Supported Distributions: Ubuntu 14.04, Debian 8 'Jessie' and Raspbian
+
+If you want to run the SDK on a non Debian distribution, unpack
+the .deb file and install the library and headers manually.
+
+ Dependencies
+--------------
+* libc (>= 2.19: i386, arm64), (>= 2.20: armv6l, armhf)
+* pthread
+* dbus (>= 1.6.8)
+* zlib (>= 1.2.8: i386 and arm64 only)
+* NEON CPU support (armhf only)
+* OpenGLES (>= 2.0) optional for GPU acceleration
+* Video4Linux2 (V4L2) optional camera module
+
+ SDK Installation
+------------------
+
+$ sudo dpkg -i libscandit-barcodescanner-X.Y.Z-amd64.deb
+
+Sample Applications
+-------------------
+
+The sample applications are contained the samples directory. The samples 
+depend on ImageMagick for loading images. You can install it with the 
+following command:
+
+$ sudo apt-get install libmagickwand-dev
+
+Insert your license key to both sample source files.
+
+Compile:
+$ cd samples
+$ make
+
+Execute the image demo:
+$ ./ScanditNativeBarcodeScannerDemo ean13-code.png
+
+Execute the camera demo:
+$ ./ScanditNativeBarcodeScannerCameraDemo
+
+
+ Raspberry Pi's
+-------------------
+
+The SDK supports the Raspberry Pi 2, 3 and Zero. The camera has to support 
+Video4Linux2 (V4L2). The following steps are required to setup V4L2:
+
+$ sudo apt-get install v4l-utils
+
+Put bcm2835-v4l2  into /etc/modules-load.d/modules.conf
+Reboot the device.

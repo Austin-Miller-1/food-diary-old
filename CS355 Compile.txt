@@ -1,0 +1,254 @@
+usbscale
+cc -Os -Wall  usbscale.c -lm -lusb-1.0 -o usbscale.exe
+
+distance
+gcc -Wall -pthread -lpigpio -lrt distance.c -o distance.exe 
+
+barcode
+cc -lscanditsdk -lz -lpthread `pkg-config --cflags --libs MagickWand` barcodeScan.c -o barcodeScan.exe
+
+cc -lscanditsdk -lz -lpthread `pkg-config --cflags --libs MagickWand` barcodeTest.c scanBarcode.c  -o ScanditNativeBarcodeScannerDemo
+
+
+
+cc -lscanditsdk -lz -lpthread -I/usr/include/ImageMagick-6 -lMagickCore -lMagickWand -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 barcodeTest.c scanBarcode.c  -o ScanditNativeBarcodeScannerDemo
+
+cc -lscanditsdk -lz -lpthread -I/usr/local/include/ImageMagick-7 -lMagickCore -lMagickWand barcodeTest.c scanBarcode.c  -o ScanditNativeBarcodeScannerDemo
+
+
+//COMPILE SCANDIT 
+
+ex:
+cc -lscanditsdk -lz -lpthread -I/usr/local/include/ImageMagick-7 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -Lusr/local/lib/ -lMagickCore-7.Q16HDRI -lMagickWand-7.Q16HDRI barcodeTest.c scanBarcode.c  -o ScanditNativeBarcodeScannerDemo
+
+real:
+cc -lscanditsdk -lz -lpthread -I/usr/local/include/ImageMagick-7 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -Lusr/local/lib/ -lMagickCore-7.Q16HDRI -lMagickWand-7.Q16HDRI barcodeTest.c scanBarcode.c  -o testApp.exe
+
+cc -lscanditsdk -lz -lpthread -I/usr/local/include/ImageMagick-7 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -Lusr/local/lib/ -lMagickCore-7.Q16HDRI -lMagickWand-7.Q16HDRI barcodeScanner.c  -o barcodeScanner.exe
+
+
+
+overall
+
+cc -Os -Wall -pthread -lpigpio -lrt -lm -lusb-1.0 -lnanomsg foodDiary2.c usbscale.c distanceSensor.c CameraModule.c -o foodDiary.exe
+
+cc -Os -Wall -pthread -lpigpio -lrt -lm -lusb-1.0 foodDiary3.c usbscale.c distanceSensor.c CameraModule.c -o foodDiaryNew.exe
+
+cc -Os -Wall -pthread -lpigpio -lrt -lm -lusb-1.0 lscanditsdk -lz -lpthread `pkg-config --cflags --libs MagickWand` foodDiary4.c usbscale.c distanceSensor.c CameraModule.c scanBarcode.c -o ScanditNativeBarcodeScannerDemo
+
+
+
+cc -Os -Wall -pthread -lpigpio -lrt -lm -lusb-1.0 foodDiary.c usbscale.c distanceSensor.c CameraModule.c -o foodDiary.exe
+
+
+cc -lscanditsdk -lz -lpthread -I/usr/local/include/ImageMagick-7 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -Lusr/local/lib/ -lMagickCore-7.Q16HDRI -lMagickWand-7.Q16HDRI BarcodeScanner.c  -o BarcodeScanner.exe
+
+
+
+
+curl
+
+curl --data "param1=hello&param2=world" https://fd-website.herokuapp.com/api/test-session
+
+
+curl -X POST -d @json https://fd-website.herokuapp.com/api/test-session --header "Content-Type:application/json"
+
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user","password":"something"}' https://fd-website.herokuapp.com/api/test-session 
+
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user","password":"something"}' https://azdfte12k-the-public-library.herokuapp.com/
+
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user","password":"something"}' https://serene-depths-91922.herokuapp.com
+
+
+//Get token
+
+http GET https://fd-website.herokuapp.com/api/getimgurtoken 'username=austinTestAccount'
+
+
+CS492
+
+cd:
+
+cd "/c/users/austin/desktop/cs492 final"
+
+app:
+gcc Application.c `pkg-config --cflags --libs gtk+-2.0 glib-2.0`
+
+
+
+etc 
+
+sudo dpkg -L libmagickwand-dev
+
+
+
+
+
+
+imgur 
+
+
+echo $(curl -X POST -H 'Authorization: Bearer df135dc4e790bf8b95b17d5fa132514b20f58536'  https://api.imgur.com/3/upload -F image=@food.jpg -F title=banana -F album=nC1cJ ) >> imgurResponse 
+
+
+echo $(curl -X POST -H 'Authorization: Bearer df135dc4e790bf8b95b17d5fa132514b20f58536'  https://api.imgur.com/3/upload -F image=@food.jpg:title=banana -F album=nC1cJ ) >> imgurResponse 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e04ffbc88d29cee8e374d97133d077ba32094b59
+
+curl -X POST -H 'Authorization: Bearer e04ffbc88d29cee8e374d97133d077ba32094b59' -
+
+
+echo $(curl -X POST -H 'Authorization: Bearer df135dc4e790bf8b95b17d5fa132514b20f5853'  https://api.imgur.com/3/upload --data-binary "@food.jpg"
+
+
+echo $(curl -X POST -H 'Authorization: Bearer df135dc4e790bf8b95b17d5fa132514b20f58536'  https://api.imgur.com/3/upload -F image=@food.jpg) >> imgurResponse 
+
+echo $(curl -X POST -H 'Authorization: Bearer df135dc4e790bf8b95b17d5fa132514b20f58536'  https://api.imgur.com/3/upload -d '{"image":"data:image/jpeg;base64,/9j/4WQURXhpZgAATU0AKgAAAAgACgEAAAQAAAABAAAM0AEBAAQ                AAAABAAAJoAEPAAIAAAAM
+AAAAhgEQAAIAAAAKAAAAkgEaAAUAAAABAAAAnAEbAAUAAAABAAAApAEoAAMAAAABAAIAAAEy
+AAIAAAAUAAAArAITAAMAAAABAAEAAIdpAAQAAAABAAAAwAAAA5ZSYXNwYmVycnlQaQBSUF9p
+bXgyMTkAAAAASAAAAAEAAABIAAAAATIwMTc6MDU6MDEgMTk6MTU6NDkAABeCmgAFAAAAAQAA
+AdqCnQAFAAAAAQAAAeKIIgADAAAAAQADAACIJwADAAAAAQBQAACQAAAHAAAABDAyMjCQAwAC
+AAAAFAAAAeqQBAACAAAAFAAAAf6RAQAHAAAABAECAwCSAQAKAAAAAQAAAhKSAgAFAAAAAQAA
+AhqSAwAKAAAAAQAAAiKSBQAFAAAAAQAAAiqSBwADAAAAAQACAACSCQADAAAAAQAAAACSCgAF
+AAAAAQAAAjKSfAAHAAABSgAAAjqgAAAHAAAABDAxMDCgAQADAAAAAQABAACgAgAEAAAAAQAA
+DNCgAwAEAAAAAQAACaCgBQAEAAAAAQAAA4SkAgADAAAAAQAAAACkAwADAAAAAQAAAAAAAAAA
+AACmLwAPQkAAAE4gAAAnEDIwMTc6MDU6MDEgMTk6MTU6NDkAMjAxNzowNTowMSAxOToxNTo0
+OQAARYC2AA9CQAAATiAAACcQAAAA+QAAAGQAAE4gAAAnEAAAdrYAACcQZXY9LTEgbWx1eD0t
+MSBleHA9NDI1NDMgYWc9Mzg0IGZvY3VzPTI1NSBnYWluX3I9MS4zMTIgZ2Fpbl9iPTIuMjIy
+IGdyZWVubmVzcz00IGNjbT02MDIyLC0yMzE0LDM5NCwtOTM2LDQ3MjgsMzEwLDMwMCwtNDMy
+NCw4MTI2LDAsMCwwIG1kPTAgdGc9MjU1IDI1NSBvdGg9MCAwIGI9MCBmPTI1NSAyNTUgZmk9
+MCBJU1AgQnVpbGQgRGF0ZTogQXByICA1IDIwMTcsIDExOjUzOjQ5IFZDX0JVSUxEX0lEX1ZF
+UlNJT046IDNjYTRjZjRhNjYzYzUzNTFlYWVjMDhiMjlkNTBkNmU4MzI0OTgxYjQgKGNsZWFu
+KSBWQ19CVUlMRF9JRF9VU0VSOiAgVkNfQlVJTERfSURfQlJBTkNIOiBtYXN0ZXIgAAEAAQAC
+AAAABFI5OAAAAAAAAAgBAAAEAAAAAQAAAEABAQAEAAAAAQAAADABAwADAAAAAQAGAAABGgAF
+AAAAAQAAA/wBGwAFAAAAAQAABAQBKAADAAAAAQACAAACAQAEAAAAAQAABAwCAgAEAAAAAQAA
+YAAAAAAAAAAASAAAAAEAAABIAAAAAf/Y/9sAhAACAQICAgECAgICAgICAgMFAwMDAwMGBAUE
+BQcGCAgHBgcHCAkMCggJCwkHBwoOCgsMDA0NDQgKDg8ODQ8MDQ0MAQICAgMDAwYDAwYMCAcI
+DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAAR
+CAAwAEADASIAAhEBAxEB/8QBogAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoLEAACAQMD
+AgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZ
+GiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImK
+kpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp
+6vHy8/T19vf4+foBAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKCxEAAgECBAQDBAcFBAQA
+AQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygp
+KjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaX
+mJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3
++Pn6/9oADAMBAAIRAxEAPwD8eLnS7MTEkzZzk8gY/SrUemafDpD3ENyBclljFu7EuR1LjC42
+jgcnPPQ84/Tc/sk/DBgN03itRjO77dGO3/XKsvxh+yj8JtL8NXOqXeoeL44bOMyjZfwZY9Ao
+zD1JIH5V8ZDizCzkoRjJt7Kyd/xPeeSVUnJySS83/kfnn4Vke7gudPGnz3MoeJ4J7ewiuGjA
+J8wMGALZBXHzDG33rE8YRyvFJ5Md6DG/zu9lFa5GB1CZ5znv6V93+FtB07StEt9Ps7OFLe2U
+KuY1y2BjcxA5Y45PerOo6HpV6WafTNOnd85aW2RyT6nI5r7P2FlueB7RHxr8E/g1448feFp9
+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
+AAAA","title":"food"}') >> imgurResponse
+
+
+echo $(curl -X POST -H 'Authorization: Bearer e04ffbc88d29cee8e374d97133d077ba32094b59' --url "https://api.imgur.com/3/upload.json" -d '{"image":"https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg","title":"food"}') >> imgurResponse
+
+
+
+
+
+
+echo $(
+curl -X POST "https://api.imgur.com/3/upload" \
+-H 'Authorization: Bearer e04ffbc88d29cee8e374d97133d077ba32094b59' \
+-F "Filedata=@\"$filepath\";filename=food.jpg;type=image/jpg" ) >> imgurResponse
+
+
+
+
+actually used:
+
+begin with..
+DISPLAY=:0 chromium-browser https://fd-website.herokuapp.com &
+
+
+overall:
+
+cc -Os -Wall -pthread -lpigpio -lrt -lm -lusb-1.0 foodDiary.c usbscale.c distanceSensor.c CameraModule.c -o foodDiary.exe
+
+
+barcode scanner:
+
+
+cc -lscanditsdk -lz -lpthread -I/usr/local/include/ImageMagick-7 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -Lusr/local/lib/ -lMagickCore-7.Q16HDRI -lMagickWand-7.Q16HDRI BarcodeScanner.c  -o BarcodeScanner.exe
+
+curl:
+
+http GET https://fd-website.herokuapp.com/api/getimgurtoken 'username=austinTestAccount'
+
+echo $(curl -X POST -H 'Authorization: Bearer df135dc4e790bf8b95b17d5fa132514b20f58536'  https://api.imgur.com/3/upload -F image=@food.jpg -F title=banana -F album=nC1cJ ) >> imgurResponse
+
+
+
+http -f POST https://fd-website.herokuapp.com/api/accmanage/getacctinfo username=austinTestAccount2
+
+
+poster:
+
+Title: Food Diary, a Internet-of-Things Health Application
+
+
+
+
